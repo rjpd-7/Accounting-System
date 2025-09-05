@@ -70,15 +70,3 @@ body {
 }
 
 /* Homepage/Dashboard */
-.navbars {
-    display: grid;
-}
-
-.navbars .top_section {
-    grid-row: auto;
-}
-
-.sidebar {
-    width: 80px;
-    background-color: #8E110B;
-}
