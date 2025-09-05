@@ -109,4 +109,16 @@ body {
     .sidebar {
         width: 60px;
     }
+
+    .sidebar .description {
+        display: none;
+    }
+
+    .sidebar .nav-link {
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 60px;
+    }
 }
