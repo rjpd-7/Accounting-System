@@ -70,3 +70,43 @@ body {
 }
 
 /* Homepage/Dashboard */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    padding-top: 20px;
+    background-color: #8E110B;
+    transition: width 0.3s;
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    color: #FFF8F6;
+}
+
+.sidebar .description {
+    font-size: 20px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #5D2321;
+}
+
+.main-content {
+    height: 100%;
+    margin-left: 200px;
+    padding: 20px;
+}
+
+/*  Configuration for smaller device width   */
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 60px;
+    }
+}
