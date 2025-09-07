@@ -70,6 +70,10 @@ body {
 }
 
 /* Homepage/Dashboard */
+#menu {
+    background-color: #5D2321;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -94,7 +98,8 @@ body {
 }
 
 .sidebar .nav-link:hover {
-    background-color: #5D2321;
+    background-color: #720b05;
+    color: #FFF8F6;
 }
 
 .main-content {
