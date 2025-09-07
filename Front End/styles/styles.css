@@ -74,6 +74,16 @@ body {
     background-color: #5D2321;
 }
 
+/* Collapsed sidebar */
+.sidebar.collapsed {
+    width: 70px; /* Only enough for icons */
+}
+
+/* Hide description text when collapsed */
+.sidebar.collapsed .description {
+    display: none;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -82,7 +92,8 @@ body {
     width: 200px;
     padding-top: 20px;
     background-color: #8E110B;
-    transition: width 0.3s;
+    transition: width 0.3s ease;
+    overflow: hidden;
 }
 
 .sidebar .nav-link {
