@@ -7,4 +7,4 @@ from django.urls import reverse
 
 #Landing Page / Dashboard
 def index(request):
-    return render(request, "randomNumApp/index.html")
+    return render(request, "Front_End/index.html")
