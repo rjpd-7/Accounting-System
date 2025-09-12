@@ -85,11 +85,47 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
+                <div class="journal-form">
+                <form action="/submit-entry" method="post">
+        
+                    <!-- Entry Date -->
+                    <label for="entry-date">Date:</label><br>
+                    <input type="date" id="entry-date" name="entry_date" required><br><br>
+
+                    <!-- Description -->
+                    <label for="description">Description:</label><br>
+                    <input type="text" id="description" name="description" placeholder="E.g., Rent payment, invoice received..." required><br><br>
+
+                    <!-- Journal Entry Table -->
+                    <table>
+                    <thead>
+                        <tr>
+                        <th>Account Name</th>
+                        <th>Debit</th>
+                        <th>Credit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td><input type="text" name="account_name_1" required></td>
+                        <td><input type="number" name="debit_1" step="0.01" min="0"></td>
+                        <td><input type="number" name="credit_1" step="0.01" min="0"></td>
+                        </tr>
+                        <tr>
+                        <td><input type="text" name="account_name_2" required></td>
+                        <td><input type="number" name="debit_2" step="0.01" min="0"></td>
+                        <td><input type="number" name="credit_2" step="0.01" min="0"></td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                    </table>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit Journal Entry</button>
+                    </div>
+                </form>
+                </div>
             </div>
             </div>
         </div>

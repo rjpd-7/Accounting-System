@@ -149,6 +149,25 @@ body {
     padding: 20px;
 }
 
+/* Main Journal Content */
+/* Journal Form */
+.journal-form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+.journal-form th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+.journal-form th {
+    background-color: #f4f4f4;
+}
+.journal-form input[type="number"] {
+    width: 100%;
+}
+
 /*  Configuration for smaller device width   */
 
 @media (max-width: 480px) {
