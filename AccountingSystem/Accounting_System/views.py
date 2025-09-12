@@ -1,3 +1,10 @@
+from django.http import HttpResponseRedirect
+from django import forms
 from django.shortcuts import render
+from django.urls import reverse
 
 # Create your views here.
+
+#Landing Page / Dashboard
+def index(request):
+    return render(request, "randomNumApp/index.html")
