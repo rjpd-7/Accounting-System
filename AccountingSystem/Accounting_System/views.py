@@ -12,7 +12,9 @@ def index(request):
 
 # Journal Entries Page
 def journals(request):
-    return render(request, "Front_End/journal.html")
+    return render(request, "Front_End/journal.html", {
+        "journals": JournalEntry.objects.all()
+    })
 
 # Journal Entry Modal Submit
 def insert_journals(request):
