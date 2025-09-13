@@ -12,8 +12,16 @@ def index(request):
 
 # Journal Entries Page
 def journals(request):
+    results = JournalEntry.objects.all()
     return render(request, "Front_End/journal.html", {
-        "journals": JournalEntry.objects.all()
+        "date" : JournalEntry.date,
+        "description" : JournalEntry.description,
+        "account_name_1" : JournalEntry.account_name_1,
+        "debit_1" : JournalEntry.debit_1,
+        "credit_1" : JournalEntry.credit_1,
+        "account_name_2" : JournalEntry.account_name_2,
+        "debit_2" : JournalEntry.debit_2,
+        "credit_2" : JournalEntry.credit_2,
     })
 
 # Journal Entry Modal Submit
