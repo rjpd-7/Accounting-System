@@ -8,3 +8,6 @@ from django.urls import reverse
 #Landing Page / Dashboard
 def index(request):
     return render(request, "Front_End/index.html")
+
+def journals(request):
+    return render(request, "Front_End/journal.html")
