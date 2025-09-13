@@ -89,20 +89,22 @@
                 </tr>
             </thead>
             <tbody>
+                {% for journal in journals %}
                 <tr>
-                    <td>{{ date }}</td>
-                    <td>{{ description }}</td>
-                    <td>{{ account_name_1 }}</td>
-                    <td>{{ debit_1 }}</td>
-                    <td>{{ credit_1 }}</td>
+                    <td>{{ journal.date }}</td>
+                    <td>{{ journal.description }}</td>
+                    <td>{{ journal.account_name_1 }}</td>
+                    <td>{{ journal.debit_1 }}</td>
+                    <td>{{ journal.credit_1 }}</td>
                 </tr>
                 <tr>
-                    <td>{{ date }}</td>
-                    <td>{{ description }}</td>
-                    <td>{{ account_name_2 }}</td>
-                    <td>{{ debit_2 }}</td>
-                    <td>{{ credit_2 }}</td>
+                    <td>{{ journal.date }}</td>
+                    <td>{{ journal.description }}</td>
+                    <td>{{ journal.account_name_2 }}</td>
+                    <td>{{ journal.debit_2 }}</td>
+                    <td>{{ journal.credit_2 }}</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
 
