@@ -7,5 +7,6 @@ app_name = "AccountingSystem"
 # URL configuration for Accounting_System.
 urlpatterns = [
     path("", views.index, name="index"),
-    path("journal/", views.journals, name="journals")
+    path("journal/", views.journals, name="journals"),
+    path("insert_journals/", views.insert_journals, name="insert_journals")
 ]
