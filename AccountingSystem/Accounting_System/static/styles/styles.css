@@ -89,11 +89,44 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 200px;
-    padding-top: 20px;
+    width: 60px;
     background-color: #8E110B;
     transition: width 0.3s ease;
     overflow: hidden;
+    box-sizing: border-box;
+
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+.sidebar ul {
+    position: relative;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.sidebar ul li {
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.sidebar ul li a {
+    color: #FFF8F6;
+}
+
+.sidebar a.active {
+    background-color: #311413;
+}
+
+.sidebar ul li:hover {
+    background-color: #720b05;
+    color: #FFF8F6;
+    transition: 0.3s ease;
 }
 
 .sidebar .nav-link {
@@ -102,21 +135,37 @@ body {
     gap: 20px;
     padding: 10px 20px;
     color: #FFF8F6;
+    text-decoration: none;
 }
 
 .sidebar .description {
     font-size: 20px;
-}
-
-.sidebar .nav-link:hover {
-    background-color: #720b05;
-    color: #FFF8F6;
+    padding-left: .5rem;
 }
 
 .main-content {
     height: 100%;
     margin-left: 200px;
     padding: 20px;
+}
+
+/* Main Journal Content */
+/* Journal Form */
+.journal-form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+.journal-form th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+.journal-form th {
+    background-color: #f4f4f4;
+}
+.journal-form input[type="number"] {
+    width: 100%;
 }
 
 /*  Configuration for smaller device width   */
