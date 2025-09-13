@@ -13,27 +13,42 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='journalentry',
-            name='account_name',
-            field=models.TextField(null=True),
-        ),
-        migrations.AddField(
-            model_name='journalentry',
-            name='credit',
-            field=models.DecimalField(decimal_places=100, default=0, max_digits=100),
-        ),
-        migrations.AddField(
-            model_name='journalentry',
             name='date',
             field=models.DateField(default=datetime.date(2025, 9, 13)),
         ),
         migrations.AddField(
             model_name='journalentry',
-            name='debit',
-            field=models.DecimalField(decimal_places=100, default=0, max_digits=100),
+            name='description',
+            field=models.TextField(null=True),
         ),
         migrations.AddField(
             model_name='journalentry',
-            name='description',
+            name='account_name_1',
             field=models.TextField(null=True),
+        ),
+        migrations.AddField(
+            model_name='journalentry',
+            name='debit_1',
+            field=models.DecimalField(decimal_places=10, blank=True, max_digits=19),
+        ),
+        migrations.AddField(
+            model_name='journalentry',
+            name='credit_1',
+            field=models.DecimalField(decimal_places=10, blank=True, max_digits=19),
+        ),
+         migrations.AddField(
+            model_name='journalentry',
+            name='account_name_2',
+            field=models.TextField(null=True),
+        ),
+        migrations.AddField(
+            model_name='journalentry',
+            name='debit_2',
+            field=models.DecimalField(decimal_places=10, blank=True, max_digits=19),
+        ),
+        migrations.AddField(
+            model_name='journalentry',
+            name='credit_2',
+            field=models.DecimalField(decimal_places=10, blank=True, max_digits=19),
         ),
     ]
