@@ -88,7 +88,7 @@
             <div class="modal-body">
                 <div class="journal-form">
                 <form action="/submit-entry" method="post">
-        
+                    {% csrf token %}
                     <!-- Entry Date -->
                     <label for="entry-date">Date:</label><br>
                     <input type="date" id="entry-date" name="entry_date" required><br><br>
