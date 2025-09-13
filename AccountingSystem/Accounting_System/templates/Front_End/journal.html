@@ -87,7 +87,7 @@
             </div>
             <div class="modal-body">
                 <div class="journal-form">
-                <form action="{% AccountingSystem : insert_journals %}" method="post">
+                <form action="{% url 'AccountingSystem:insert_journals' %}" method="post">
                     {% csrf_token %}
                     <!-- Entry Date -->
                     <label for="entry-date">Date:</label><br>

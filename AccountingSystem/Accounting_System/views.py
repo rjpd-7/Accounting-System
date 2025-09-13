@@ -24,7 +24,7 @@ def insert_journals(request):
     j_account_name_2 = request.POST['account_name_2']
     j_debit_2 = request.POST['debit_2']
     j_credit_2 = request.POST['credit_2']
-    journal = JournalEntry(entry_date = j_entry_date, description = j_description, account_name_1 = j_account_name_1, debit_1 = j_debit_1, credit_1 = j_credit_1, account_name_2 = j_account_name_2, debit_2 = j_debit_2, credit_2 = j_credit_2)
+    journal = JournalEntry(date = j_entry_date, description = j_description, account_name_1 = j_account_name_1, debit_1 = j_debit_1, credit_1 = j_credit_1, account_name_2 = j_account_name_2, debit_2 = j_debit_2, credit_2 = j_credit_2)
     journal.save()
 
     return render(request, "Front_End/journal.html")
