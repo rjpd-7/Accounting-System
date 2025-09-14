@@ -71,6 +71,26 @@
     <!------ Main Page ------>
     <main class="main-content">
         <h2>Chart of Accounts</h2>
+        <br>
+        <div class="display_table">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Account Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for account in accounts %}
+                    <tr>
+                        <td>{{ account.account_name_1 }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ account.account_name_2 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
     </main>
     <!------ Main Page End ------>
