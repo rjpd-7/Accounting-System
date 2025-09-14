@@ -168,6 +168,12 @@ body {
     width: 100%;
 }
 
+/* Display Table CSS  */
+
+.display_table {
+    color: #311413;
+}
+
 /*  Configuration for smaller device width   */
 
 @media (max-width: 480px) {

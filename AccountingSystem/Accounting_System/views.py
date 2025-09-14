@@ -31,3 +31,5 @@ def insert_journals(request):
     journal.save()
 
     return render(request, "Front_End/journal.html")
+
+
