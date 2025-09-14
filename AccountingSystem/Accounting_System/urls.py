@@ -8,5 +8,6 @@ app_name = "AccountingSystem"
 urlpatterns = [
     path("", views.index, name="index"),
     path("journal/", views.journals, name="journals"),
-    path("insert_journals/", views.insert_journals, name="insert_journals")
+    path("insert_journals/", views.insert_journals, name="insert_journals"),
+    path("accounts/", views.chart_of_accounts, name="accounts")
 ]

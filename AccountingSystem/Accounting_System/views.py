@@ -32,4 +32,5 @@ def insert_journals(request):
 
     return render(request, "Front_End/journal.html")
 
-
+def chart_of_accounts(request):
+    return render(request, "Front_End/accounts.html")
