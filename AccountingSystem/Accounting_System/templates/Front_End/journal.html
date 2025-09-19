@@ -98,15 +98,15 @@
                         <td>{{ journal.date }}</td>
                         <td>{{ journal.description }}</td>
                         <td>{{ journal.account_name_1 }}</td>
-                        <td>{{ journal.debit_1 }}</td>
-                        <td>{{ journal.credit_1 }}</td>
+                        <td>{{ journal.debit_1|floatformat:2 }}</td>
+                        <td>{{ journal.credit_1|floatformat:2 }}</td>
                     </tr>
                     <tr>
                         <td>{{ journal.date }}</td>
                         <td>{{ journal.description }}</td>
                         <td>{{ journal.account_name_2 }}</td>
-                        <td>{{ journal.debit_2 }}</td>
-                        <td>{{ journal.credit_2 }}</td>
+                        <td>{{ journal.debit_2|floatformat:2 }}</td>
+                        <td>{{ journal.credit_2|floatformat:2 }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
