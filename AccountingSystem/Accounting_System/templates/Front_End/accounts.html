@@ -72,25 +72,53 @@
     <main class="main-content">
         <h2>Chart of Accounts</h2>
         <br>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Create Account
+        </button>
+        <br>
+        <br>
         <div class="display_table">
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>Account Code</th>
                         <th>Account Name</th>
+                        <th>Account Type</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for account in accounts %}
                     <tr>
-                        <td>{{ account.account_name_1 }}</td>
-                    </tr>
-                    <tr>
-                        <td>{{ account.account_name_2 }}</td>
+                        <td>{{ account.account_code}}</td>
+                        <td>{{ account.account_name}}</td>
+                        <td>{{ account.account_type}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Account</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- End Modal -->
+
 
     </main>
     <!------ Main Page End ------>
