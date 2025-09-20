@@ -9,5 +9,6 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("journal/", views.journals, name="journals"),
     path("insert_journals/", views.insert_journals, name="insert_journals"),
-    path("accounts/", views.chart_of_accounts, name="accounts")
+    path("accounts/", views.chart_of_accounts, name="accounts"),
+    path("files/", views.files, name="files")
 ]

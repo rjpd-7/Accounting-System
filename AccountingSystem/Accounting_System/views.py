@@ -37,3 +37,6 @@ def chart_of_accounts(request):
     return render(request, "Front_End/accounts.html", {
         "accounts" : results
     })
+
+def files(request):
+    return render(request, "Front_End/files.html")
