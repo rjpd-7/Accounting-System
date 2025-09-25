@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django import forms
 from django.shortcuts import render
 from django.urls import reverse
-from .models import JournalEntry, ChartOfAccounts
+from .models import JournalEntry, Accounts
 
 # Create your views here.
 
