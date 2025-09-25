@@ -10,6 +10,9 @@ from .models import JournalEntry, ChartOfAccounts
 def index(request):
     return render(request, "Front_End/index.html")
 
+def login(request):
+    return render(request, "Front_End/login.html")
+
 # Journal Entries Page
 def journals(request):
     results = JournalEntry.objects.all()
@@ -33,7 +36,7 @@ def insert_journals(request):
     return render(request, "Front_End/journal.html")
 
 def chart_of_accounts(request):
-    results = JournalEntry.objects.all()
+    results = ChartOfAccounts.objects.all()
     return render(request, "Front_End/accounts.html", {
         "accounts" : results
     })
