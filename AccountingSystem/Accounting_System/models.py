@@ -18,7 +18,7 @@ class JournalEntry(models.Model):
 class ChartOfAccounts(models.Model):
     account_code = models.BigIntegerField()
     account_name = models.TextField(max_length=None, null=True)
-    account_name = models.TextField(max_length=None, null=True)
+    account_type = models.TextField(max_length=None, null=True)
 
     class Meta:
         db_table = "sample_accounts"
