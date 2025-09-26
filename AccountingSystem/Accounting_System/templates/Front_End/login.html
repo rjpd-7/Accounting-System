@@ -21,6 +21,7 @@
             <p>ACLC Accounting System</p>
         </div>
         <form action="">
+            {% csrf_token %}
             <div class="input_box">
                 <input type="text" name="usn" id="usn" required placeholder="Enter USN">
                 <input type="password" name="password" id="password" required placeholder="Enter Password">
