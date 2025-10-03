@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django import forms
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import JournalEntry, Accounts, USN_Accounts
 from django.contrib.auth import authenticate, login, logout
@@ -11,7 +11,7 @@ from django.contrib.auth import authenticate, login, logout
 def index(request):
     return render(request, "Front_End/index.html")
 
-def login(request):
+def login_view(request):
     if request.method == "POST":
         username = request.POST["usn"]
         password = request.POST["password"]
@@ -24,6 +24,10 @@ def login(request):
                 "message": "Invalid credentials."
             })
 
+    return render(request, "Front_End/login.html")
+
+def logout_view(request):
+    
     return render(request, "Front_End/login.html")
 
 # Journal Entries Page
