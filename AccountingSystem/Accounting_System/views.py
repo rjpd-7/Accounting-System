@@ -2,7 +2,8 @@ from django.http import HttpResponseRedirect
 from django import forms
 from django.shortcuts import render
 from django.urls import reverse
-from .models import JournalEntry, Accounts
+from .models import JournalEntry, Accounts, USN_Accounts
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
@@ -11,6 +12,18 @@ def index(request):
     return render(request, "Front_End/index.html")
 
 def login(request):
+    if request.method == "POST":
+        username = request.POST["usn"]
+        password = request.POST["password"]
+        user = authenticate(request, usn=username, password=password)
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect(reverse("index"))
+        else:
+            return render(request, "Front_End/login.html", {
+                "message": "Invalid credentials."
+            })
+
     return render(request, "Front_End/login.html")
 
 # Journal Entries Page
