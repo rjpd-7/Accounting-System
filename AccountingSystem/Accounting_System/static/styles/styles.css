@@ -70,6 +70,10 @@ body {
     cursor: pointer;
 }
 
+.loginBTN:hover {
+    cursor: pointer;
+}
+
 /* Homepage/Dashboard */
 #menu {
     background-color: #5D2321;
