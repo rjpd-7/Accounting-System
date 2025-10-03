@@ -20,14 +20,14 @@
         <div id="login_topbar">
             <p>ACLC Accounting System</p>
         </div>
-        <div class="input_box">
-            <form action="">
+        <form action="">
             {% csrf_token %}
+            <div class="input_box">
                 <input type="text" name="usn" id="usn" required placeholder="Enter USN">
                 <input type="password" name="password" id="password" required placeholder="Enter Password">
                 <button class="loginBTN">Login</button>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>

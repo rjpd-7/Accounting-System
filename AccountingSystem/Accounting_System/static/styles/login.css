@@ -53,6 +53,7 @@ body{
     border-radius: 10px;
     padding: 6px;
     margin: 10px;
+    border: 0.5px solid;
     width: 250px;
     font-size: 16px;
     box-shadow: #311413;
@@ -67,9 +68,5 @@ body{
     border: none;
     width: 100px;
     font-family: Inter;
-    cursor: pointer;
-}
-
-.loginBTN:hover {
     cursor: pointer;
 }
