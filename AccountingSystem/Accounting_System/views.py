@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate, login, logout
 def index(request):
     return render(request, "Front_End/index.html")
 
+# Login Page
 def login_view(request):
     if request.method == "POST":
         username = request.POST["usn"]
@@ -52,13 +53,14 @@ def insert_journals(request):
 
     return HttpResponseRedirect(reverse("AccountingSystem:journals"))
 
+# Accounts Page
 def chart_of_accounts(request):
     results = Accounts.objects.all()
     return render(request, "Front_End/accounts.html", {
         "accounts" : results
     })
 
-#Create Account Modal Submit
+# Create Account Modal Submit
 def create_account(request):
     account_code_submit = request.POST['account_code']
     account_name_submit = request.POST['account_name']
@@ -67,6 +69,10 @@ def create_account(request):
     account.save()
 
     return HttpResponseRedirect(reverse("AccountingSystem:accounts"))
+
+# Balance Page
+def trial_balance(request):
+    return render(request, "Front_End/balance.html")
 
 def files(request):
     return render(request, "Front_End/files.html")
