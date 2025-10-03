@@ -20,7 +20,7 @@
         <div id="login_topbar">
             <p>ACLC Accounting System</p>
         </div>
-        <form action="{% url 'AccountingSystem:login' %}">
+        <form action="{% url 'AccountingSystem:login' %}" method="POST">
             {% csrf_token %}
             <div class="input_box">
                 <input type="text" name="usn" id="usn" required placeholder="Enter USN">
@@ -29,5 +29,6 @@
             </div>
         </form>
     </div>
+    {{ message }}
 </body>
 </html>
