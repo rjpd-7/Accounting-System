@@ -124,7 +124,16 @@
                             <tr>
                                 <td><input type="number" name="account_code" required></td>
                                 <td><input type="text" name="account_name" required></td>
-                                <td><input type="text" name="account_type" required></td>
+                                <td>
+                                    <select name="account_type" required>
+                                        <option value="Assets">Assets</option>
+                                        <option value="Liabilities">Liabilities</option>
+                                        <option value="Equity">Equity</option>
+                                        <option value="Revenue">Revenue</option>
+                                        <option value="Expenses">Expenses</option>
+                                        <option value="Dividends">Dividends</option>
+                                    </select>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
