@@ -16,7 +16,7 @@ class JournalEntry(models.Model):
         db_table = "sample"
 
 class Accounts(models.Model):
-    account_code = models.BigIntegerField()
+    account_code = models.BigIntegerField(primary_key=True)
     account_name = models.TextField(max_length=None, null=True)
     account_type = models.TextField(max_length=None, null=True)
 
