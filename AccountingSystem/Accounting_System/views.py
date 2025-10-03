@@ -50,7 +50,7 @@ def insert_journals(request):
     journal = JournalEntry(date = j_entry_date, description = j_description, account_name_1 = j_account_name_1, debit_1 = j_debit_1, credit_1 = j_credit_1, account_name_2 = j_account_name_2, debit_2 = j_debit_2, credit_2 = j_credit_2)
     journal.save()
 
-    return render(request, "Front_End/journal.html")
+    return HttpResponseRedirect(reverse("AccountingSystem:journals"))
 
 def chart_of_accounts(request):
     results = Accounts.objects.all()
@@ -66,7 +66,7 @@ def create_account(request):
     account = Accounts(account_code = account_code_submit, account_name = account_name_submit, account_type = account_type_submit)
     account.save()
 
-    return render(request, "Front_End/accounts.html")
+    return HttpResponseRedirect(reverse("AccountingSystem:accounts"))
 
 def files(request):
     return render(request, "Front_End/files.html")

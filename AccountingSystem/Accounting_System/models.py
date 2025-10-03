@@ -7,9 +7,9 @@ class JournalEntry(models.Model):
     description = models.TextField(max_length=None, null=True)
     account_name_1 = models.TextField(max_length=None, null=True)
     debit_1 = models.DecimalField(max_digits=18, decimal_places=9, blank=True)
-    credit_1 = models.DecimalField(max_digits=18, decimal_places=9, blank=True)
+    credit_1 = models.DecimalField(max_digits=18, decimal_places=9, blank=True, default=0.0)
     account_name_2 = models.TextField(max_length=None, null=True)
-    debit_2 = models.DecimalField(max_digits=18, decimal_places=9, blank=True)
+    debit_2 = models.DecimalField(max_digits=18, decimal_places=9, blank=True, default=0.0)
     credit_2 = models.DecimalField(max_digits=18, decimal_places=9, blank=True)
 
     class Meta:
