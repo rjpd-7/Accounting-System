@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anta&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -20,14 +20,14 @@
         <div id="login_topbar">
             <p>ACLC Accounting System</p>
         </div>
-        <form action="">
+        <div class="input_box">
+            <form action="">
             {% csrf_token %}
-            <div class="input_box">
                 <input type="text" name="usn" id="usn" required placeholder="Enter USN">
                 <input type="password" name="password" id="password" required placeholder="Enter Password">
                 <button class="loginBTN">Login</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 </html>
