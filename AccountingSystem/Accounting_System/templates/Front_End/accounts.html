@@ -108,8 +108,8 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <div class="journal-form">
-                <form action="{% url '' %}" method="post">
+            <div class="account-form">
+                <form action="{% url 'AccountingSystem:create_account' %}" method="post">
                     {% csrf_token %}
                     <!-- Create Account -->
                     <table>
@@ -124,16 +124,16 @@
                             <tr>
                                 <td><input type="number" name="account_code" required></td>
                                 <td><input type="text" name="account_name" required></td>
-                                <td><input type="text" name="account_tye" required></td>
+                                <td><input type="text" name="account_type" required></td>
                             </tr>
                         </tbody>
                     </table>
                     
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-primary">
-                </div>
-            </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </form>
             </div>
         </div>
         </div>

@@ -52,10 +52,10 @@ body {
 .input_box input {
     border-radius: 10px;
     padding: 6px;
-    border: none;
     margin: 10px;
     width: 250px;
     font-size: 16px;
+    box-shadow: #311413;
 }
 
 .loginBTN {
@@ -67,6 +67,7 @@ body {
     border: none;
     width: 100px;
     font-family: Inter;
+    cursor: pointer;
 }
 
 /* Homepage/Dashboard */
@@ -194,3 +195,20 @@ body {
     }
 }
 
+/* Create account modal form */
+.account-form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+.account-form th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+.account-form th {
+    background-color: #f4f4f4;
+}
+.account-form input{
+    width: 100%;
+}
