@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import JournalEntry, Accounts, USN_Accounts
 from django.contrib.auth import authenticate, login, logout
+from .forms import UpdateJournalForm
 
 # Create your views here.
 
@@ -56,17 +57,22 @@ def insert_journals(request):
     return HttpResponseRedirect(reverse("AccountingSystem:journals"))
 
 # Edit Journal Modal Submit
-def edit_journal(request):
+def edit_journal(request, pk):
     # Passing values onto Edit Journal Modal
-    if 'edit' in request.POST:
-        pk = request.POST['edit']
-        journal_value = JournalEntry.objects.get(id=pk)
-        return render(request, "Front_End/journal.html", {
-        "journal_value" : journal_value,
-    })
+    journal =JournalEntry.objects.get(id = pk)
 
+    if request.method == 'POST':
+        form = UpdateJournalForm(request.POST, instance = journal)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse("AccountingSystem:journals"))
+    
+    else:
+        pass
 
     return HttpResponseRedirect(reverse("AccountingSystem:journals"))
+
 
 # Accounts Page
 def chart_of_accounts(request):
