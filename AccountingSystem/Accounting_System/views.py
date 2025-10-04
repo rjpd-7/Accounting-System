@@ -33,9 +33,10 @@ def logout_view(request):
 
 # Journal Entries Page
 def journals(request):
+    accounts = Accounts.account_name.all()
     results = JournalEntry.objects.all()
     return render(request, "Front_End/journal.html", {
-        "journals" : results
+        "journals" : results, "accounts": accounts
     })
 
 # Journal Entry Modal Submit
