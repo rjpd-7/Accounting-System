@@ -57,7 +57,14 @@ def insert_journals(request):
 
 # Edit Journal Modal Submit
 def edit_journal(request):
-    
+    # Passing values onto Edit Journal Modal
+    if 'edit' in request.POST:
+        pk = request.POST['edit']
+        journal_value = JournalEntry.objects.get(id=pk)
+        return render(request, "Front_End/journal.html", {
+        "journal_value" : journal_value,
+    })
+
 
     return HttpResponseRedirect(reverse("AccountingSystem:journals"))
 
