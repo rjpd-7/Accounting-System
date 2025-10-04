@@ -33,10 +33,11 @@ def logout_view(request):
 
 # Journal Entries Page
 def journals(request):
-    accounts = Accounts.account_name.all()
+    accounts = Accounts.objects.all()
     results = JournalEntry.objects.all()
     return render(request, "Front_End/journal.html", {
-        "journals" : results, "accounts": accounts
+        "journals" : results, 
+        "accounts": accounts
     })
 
 # Journal Entry Modal Submit
@@ -51,6 +52,12 @@ def insert_journals(request):
     j_credit_2 = request.POST['credit_2']
     journal = JournalEntry(date = j_entry_date, description = j_description, account_name_1 = j_account_name_1, debit_1 = j_debit_1, credit_1 = j_credit_1, account_name_2 = j_account_name_2, debit_2 = j_debit_2, credit_2 = j_credit_2)
     journal.save()
+
+    return HttpResponseRedirect(reverse("AccountingSystem:journals"))
+
+# Edit Journal Modal Submit
+def edit_journal(request):
+    
 
     return HttpResponseRedirect(reverse("AccountingSystem:journals"))
 
@@ -75,5 +82,6 @@ def create_account(request):
 def trial_balance(request):
     return render(request, "Front_End/balance.html")
 
+# Files Page
 def files(request):
     return render(request, "Front_End/files.html")
