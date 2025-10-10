@@ -5,3 +5,8 @@ class UpdateJournalForm(forms.ModelForm):
     class Meta:
         model = JournalEntry
         fields = '__all__'
+
+class InsertJournalForm(forms.ModelForm):
+    class Meta:
+        model = JournalEntry
+        fields = '__all__'
