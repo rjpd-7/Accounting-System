@@ -17,7 +17,7 @@ def login_view(request):
     if request.method == "POST":
         username = request.POST["usn"]
         password = request.POST["password"]
-        user = authenticate(request, usn=username, password=password)
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             return HttpResponseRedirect(reverse("AccountingSystem:index"))
@@ -92,9 +92,13 @@ def create_account(request):
 
     return HttpResponseRedirect(reverse("AccountingSystem:accounts"))
 
-# Balance Page
+# Balance Page contains General Ledger and Trial Balance
 def trial_balance(request):
-    return render(request, "Front_End/balance.html")
+    results = JournalEntry.objects.all()
+
+    return render(request, "Front_End/balance.html", {
+        "journals":results,
+    })
 
 # Files Page
 def files(request):

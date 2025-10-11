@@ -29,3 +29,4 @@ class USN_Accounts(models.Model):
 
     class Meta:
         db_table = "sample_usn_accounts"
+
