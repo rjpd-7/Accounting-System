@@ -25,10 +25,16 @@
             <div class="input_box">
                 <input type="text" name="usn" id="usn" required placeholder="Enter USN" autofocus>
                 <input type="password" name="password" id="password" required placeholder="Enter Password">
-                <input type="submit" value="Login" class="loginBTN">
+                <button type="submit" class="loginBTN">Login</button>
             </div>
         </form>
     </div>
-    {{ message }}
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+    </ul>
+    {% endif %}
 </body>
 </html>

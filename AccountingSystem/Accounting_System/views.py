@@ -4,27 +4,30 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import JournalEntry, Accounts, USN_Accounts
 from django.contrib.auth import authenticate, login, logout
-from .forms import UpdateJournalForm
+from .forms import UpdateJournalForm, LoginForm
+from django.contrib.auth.models import User
+from django.contrib import messages 
 
 # Create your views here.
 
 # Landing Page / Dashboard
 def index(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("AccountingSystem:login"))
     return render(request, "Front_End/index.html")
 
 # Login Page
 def login_view(request):
     if request.method == "POST":
-        username = request.POST["usn"]
+        usn = request.POST["usn"]
         password = request.POST["password"]
-        user = authenticate(request, usn=username, password=password)
+        user = authenticate(request, username=usn, password=password)
         if user is not None:
             login(request, user)
             return HttpResponseRedirect(reverse("AccountingSystem:index"))
         else:
-            return render(request, "Front_End/login.html", {
-                "message": "Invalid credentials."
-            })
+            messages.error(request, "Invalid Credentials")
+            return redirect("AccountingSystem:login")
 
     return render(request, "Front_End/login.html")
 
@@ -35,9 +38,9 @@ def logout_view(request):
 # Journal Entries Page
 def journals(request):
     accounts = Accounts.objects.all()
-    results = JournalEntry.objects.all()
+    journals = JournalEntry.objects.all()
     return render(request, "Front_End/journal.html", {
-        "journals" : results, 
+        "journals" : journals, 
         "accounts": accounts
     })
 
@@ -94,7 +97,12 @@ def create_account(request):
 
 # Balance Page
 def trial_balance(request):
-    return render(request, "Front_End/balance.html")
+    balances = JournalEntry.objects.all()
+    accounts = Accounts.objects.all()
+    return render(request, "Front_End/balance.html", {
+        "balances": balances,
+        "accounts": accounts,
+    })
 
 # Files Page
 def files(request):
