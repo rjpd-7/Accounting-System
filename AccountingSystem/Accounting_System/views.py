@@ -49,12 +49,10 @@ def insert_journals(request):
     j_entry_date = request.POST['entry_date']
     j_description = request.POST['description']
     j_account_name_1 = request.POST['account_name_1']
-    j_debit_1 = request.POST['debit_1']
-    j_credit_1 = request.POST['credit_1']
+    j_debit_1 = request.POST['debit']
     j_account_name_2 = request.POST['account_name_2']
-    j_debit_2 = request.POST['debit_2']
-    j_credit_2 = request.POST['credit_2']
-    journal = JournalEntry(date = j_entry_date, description = j_description, account_name_1 = j_account_name_1, debit_1 = j_debit_1, credit_1 = j_credit_1, account_name_2 = j_account_name_2, debit_2 = j_debit_2, credit_2 = j_credit_2)
+    j_credit_2 = request.POST['credit']
+    journal = JournalEntry(date = j_entry_date, description = j_description, account_name_1 = j_account_name_1, debit = j_debit_1, account_name_2 = j_account_name_2, credit = j_credit_2)
     journal.save()
 
     return HttpResponseRedirect(reverse("AccountingSystem:journals"))

@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'AccountingSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sample1',
+        'NAME': 'sample2',
         'USER': 'root',
         'PASSWORD': 'MySQLPassword',
         'HOST': 'localhost',  # or the hostname where your MySQL server is running
